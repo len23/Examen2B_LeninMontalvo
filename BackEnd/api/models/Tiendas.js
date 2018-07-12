@@ -10,23 +10,23 @@ module.exports = {
   attributes: {
 
     nombres:{
-      type:string,
+      type:'string',
       required: true
     },
     direccion:{
-      type:string,
+      type:'string',
       required: true
     },
     fechaApertura:{
-      type:string,
+      type:'string',
       required: true
     },
     RUC:{
-      type:number,
+      type:'number',
       required: true
     },
     matriz:{
-      type:boolean,
+      type:'boolean',
       required: true
     },
     productos:{

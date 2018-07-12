@@ -10,27 +10,27 @@ module.exports = {
   attributes: {
 
     numeroProducto:{
-      type:number,
+      type: 'number',
       required: true
     },
     nombre: {
-      type:string,
+      type: 'string',
       required: true
     },
     descripcion:{
-      type:string,
+      type:'string',
       required: true
     },
     precio:{
-      type:number,
+      type: 'number',
       required: true
     },
     fechaLanzamientoProducto:{
-      type:string,
+      type:'string',
       required: true
     },
     aniosGarantia:{
-      type:number,
+      type:'number',
       required: true
     },
     tiendaIdFK:{
