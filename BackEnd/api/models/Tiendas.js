@@ -9,20 +9,39 @@ module.exports = {
 
   attributes: {
 
-    //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-    //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-    //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+    nombres:{
+      type:string,
+      required: true
+    },
+    direccion:{
+      type:string,
+      required: true
+    },
+    fechaApertura:{
+      type:string,
+      required: true
+    },
+    RUC:{
+      type:number,
+      required: true
+    },
+    matriz:{
+      type:boolean,
+      required: true
+    },
+    productos:{
+      collection: 'Productos',
+      via: 'tiendaIdFK'
+    }
 
 
-    //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-    //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-    //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
 
-
-    //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-    //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-    //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-
+    /* direccion: string;
+    fechaApertura: string;
+    RUC: number;
+    matriz: boolean;
+    tiendaId: number; */
+  
   },
 
 };
