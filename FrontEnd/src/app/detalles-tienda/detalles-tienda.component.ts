@@ -18,6 +18,7 @@ export class DetallesTiendaComponent implements OnInit {
 
   ngOnInit() {
     this.getTienda();
+    
   }
 
   getTienda(): void {

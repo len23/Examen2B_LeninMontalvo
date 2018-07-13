@@ -12,15 +12,29 @@ import {ProductosService} from '../productos.service';
 export class CarritoComponent implements OnInit {
 
   @Input() producto: Producto;
-  productos:Producto[]=[];
+  productos=[];
+  producto1;
+
 
   constructor(private route: ActivatedRoute,
     private productoService: ProductosService,
     private location: Location) { }
 
   ngOnInit() {
-
+    this.getProducto();
+    console.log('Perrrra',this.producto);
+    
   }
+
+  getProducto(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productoService.getProducto(id)
+      .subscribe(producto => this.producto = producto);
+      this.producto1=this.productoService.getProducto(id);
+     
+  }
+
+ 
 
 
 

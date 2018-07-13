@@ -27,21 +27,24 @@
   <hr>
 
      <!-- Page Content -->
-     <div class="container" *ngIf="productos.length">
+  <!--    <div class="container" *ngIf="productos.length"> -->
+        <div class="container">
 
       <!-- Page Heading -->
       <h1 class="my-4">Carrito de Compras</h1>
 
       <!-- Project One -->
-      <div class="row" *ngFor="let producto of productos">
+     <!--  <div class="row" *ngFor="let producto of productos"> -->
+        <div class="row">
         <div class="col-md-7">
           <a href="#">
-            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="{{producto.imagen}}" alt="">
           </a>
         </div>
         <div class="col-md-5">
-          <h3>{{producto.name}}</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+          <h3>{{producto.nombre}}</h3>
+          <p>Descripcion: {{producto.descripcion}}.</p>
+          <p>Precio: ${{producto.precio}}.</p>
           <a class="btn btn-primary" href="#">Eliminar</a>
         </div>
       </div>

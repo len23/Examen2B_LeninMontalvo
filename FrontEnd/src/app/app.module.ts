@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { TiendasPadreComponent } from './tiendas-padre/tiendas-padre.component';
-import { ProductosHijoComponent } from './productos-hijo/productos-hijo.component';
 import { EncabezadoComponent } from './encabezado/encabezado.component';
 
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
@@ -30,7 +29,6 @@ import {MatRadioModule} from '@angular/material/radio';
     AppComponent,
     BuscadorComponent,
     TiendasPadreComponent,
-    ProductosHijoComponent,
     EncabezadoComponent,
     DetallesTiendaComponent,
     DetallesProductoComponent,

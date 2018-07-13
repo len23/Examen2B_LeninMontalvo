@@ -22,7 +22,7 @@ export class ProductosService {
   getProducto(id: number): Observable<Producto> {
     const url = `${this.productosUrl}/${id}`;
     return this.http.get<Producto>(url).pipe(
-      catchError(this.handleError<Producto>(`getHero id=${id}`))
+      catchError(this.handleError<Producto>(`getProducto id=${id}`))
     );
   }
 

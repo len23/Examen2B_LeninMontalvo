@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {ProductosService} from '../productos.service'
@@ -10,13 +10,16 @@ import { Producto } from '../Producto';
 })
 export class DetallesProductoComponent implements OnInit {
   @Input() producto: Producto;
+  productos:Producto[]=[];
+
 
   constructor(private route: ActivatedRoute,
     private productoService: ProductosService,
     private location: Location) { }
 
-  ngOnInit() {
+  ngOnInit() {  
     this.getProducto();
+  
   }
 
   getProducto(): void {
@@ -24,11 +27,4 @@ export class DetallesProductoComponent implements OnInit {
     this.productoService.getProducto(id)
       .subscribe(producto => this.producto = producto);
   }
-
-  agregarProducto():void{
-
-    
-
-  }
-
 }

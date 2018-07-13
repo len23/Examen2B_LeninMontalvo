@@ -6,5 +6,5 @@ export class Producto {
     precio: number;
     fechaLanzamientoProducto: string;
     aniosGarantia: number;
-    tiendaId: number;
+    tiendaIdFK: number;
   }
