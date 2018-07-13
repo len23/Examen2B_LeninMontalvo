@@ -20,6 +20,13 @@ export class TiendasService {
     );  
   }
 
+  getTienda(id: number): Observable<Tienda> {
+    const url = `${this.tiendasUrl}/${id}`;
+    return this.http.get<Tienda>(url).pipe(
+      catchError(this.handleError<Tienda>(`getHero id=${id}`))
+    );
+  }
+
 
     /**
      * Handle Http operation that failed.
