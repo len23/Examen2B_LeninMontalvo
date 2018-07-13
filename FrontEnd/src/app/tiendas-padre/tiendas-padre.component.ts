@@ -11,23 +11,16 @@ import {TiendasService} from '../tiendas.service';
 export class TiendasPadreComponent implements OnInit {
   /* tiendas = TIENDAS; */
   tiendas:Tienda[];
-
   tienda:Tienda={
     nombres:'',
     direccion:''
   };
   contador:number=0;
-
-  
-
   constructor(private tiendaService:TiendasService) {
-    
-   
    }
 
   ngOnInit() {
     this.getTiendas();
-
   }
 
   getTiendas(): void {

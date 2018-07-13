@@ -15,6 +15,7 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
+import { DetallesTiendaComponent } from './detalles-tienda/detalles-tienda.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AppRoutingModule } from './/app-routing.module';
     BuscadorComponent,
     TiendasPadreComponent,
     ProductosHijoComponent,
-    EncabezadoComponent
+    EncabezadoComponent,
+    DetallesTiendaComponent
   ],
   imports: [
     BrowserModule,
