@@ -13,6 +13,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MenubarModule} from 'primeng/menubar';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
+import {HttpClientModule} from '@angular/common/http';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {InputTextModule} from 'primeng/inputtext';
     AccordionModule,
     MenubarModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

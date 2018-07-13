@@ -17,7 +17,7 @@ module.exports = {
       type:'string',
       required: true
     },
-    fechaApertura:{
+    /* fechaApertura:{
       type:'string',
       required: true
     },
@@ -28,11 +28,11 @@ module.exports = {
     matriz:{
       type:'boolean',
       required: true
-    },
-    productos:{
+    }, */
+     productos:{
       collection: 'Productos',
       via: 'tiendaIdFK'
-    }
+    } 
 
 
 

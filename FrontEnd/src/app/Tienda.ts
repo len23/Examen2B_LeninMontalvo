@@ -1,8 +1,11 @@
 export class Tienda {
-    nombres: string;
+    /* nombres: string;
     direccion: string;
     fechaApertura: string;
     RUC: number;
     matriz: boolean;
-    tiendaId: number;
+    tiendaId: number; */
+    nombres: string;
+    direccion: string;
+
 }

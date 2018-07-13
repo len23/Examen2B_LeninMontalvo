@@ -9,30 +9,30 @@ module.exports = {
 
   attributes: {
 
-    numeroProducto:{
-      type: 'number',
+   /*  numeroProducto:{
+      type: 'string',
       required: true
-    },
+    }, */
     nombre: {
       type: 'string',
       required: true
     },
-    descripcion:{
+    /* descripcion:{
       type:'string',
       required: true
-    },
+    }, */
     precio:{
-      type: 'number',
-      required: true
+      type:'number',
+    
     },
-    fechaLanzamientoProducto:{
+   /*  fechaLanzamientoProducto:{
       type:'string',
       required: true
     },
     aniosGarantia:{
-      type:'number',
+      type:'string',
       required: true
-    },
+    }, */
     tiendaIdFK:{
       model:'Tiendas'
     } 

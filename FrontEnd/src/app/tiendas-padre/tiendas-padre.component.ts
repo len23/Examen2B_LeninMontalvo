@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Tienda} from '../Tienda';
-import {TIENDAS} from '../mock-tiendas';
+import {TiendasService} from '../tiendas.service';
+
 
 @Component({
   selector: 'app-tiendas-padre',
@@ -8,11 +9,33 @@ import {TIENDAS} from '../mock-tiendas';
   styleUrls: ['./tiendas-padre.component.css']
 })
 export class TiendasPadreComponent implements OnInit {
-  tiendas = TIENDAS;
+  /* tiendas = TIENDAS; */
+  tiendas:Tienda[];
 
-  constructor() { }
+  tienda:Tienda={
+    nombres:'',
+    direccion:''
+  };
+  contador:number=0;
+
+  
+
+  constructor(private tiendaService:TiendasService) {
+    
+   
+   }
 
   ngOnInit() {
+    this.getTiendas();
+
   }
+
+  getTiendas(): void {
+    this.tiendaService.getTiendas()
+        .subscribe(tiendas => this.tiendas = tiendas);
+  } 
+
+
+
 
 }
