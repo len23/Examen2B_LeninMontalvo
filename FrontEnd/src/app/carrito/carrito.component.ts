@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Producto } from '../Producto';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import {ProductosService} from '../productos.service';
 
 @Component({
   selector: 'app-carrito',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComponent implements OnInit {
 
-  constructor() { }
+  @Input() producto: Producto;
+  productos:Producto[]=[];
+
+  constructor(private route: ActivatedRoute,
+    private productoService: ProductosService,
+    private location: Location) { }
 
   ngOnInit() {
+
   }
+
+
 
 }

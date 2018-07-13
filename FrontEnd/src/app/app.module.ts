@@ -18,6 +18,11 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DetallesTiendaComponent } from './detalles-tienda/detalles-tienda.component';
 import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 @NgModule({
@@ -39,7 +44,14 @@ import { CarritoComponent } from './carrito/carrito.component';
     ButtonModule,
     InputTextModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatRadioModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

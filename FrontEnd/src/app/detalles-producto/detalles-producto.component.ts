@@ -25,4 +25,10 @@ export class DetallesProductoComponent implements OnInit {
       .subscribe(producto => this.producto = producto);
   }
 
+  agregarProducto():void{
+
+    
+
+  }
+
 }
