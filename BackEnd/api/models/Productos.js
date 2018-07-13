@@ -9,41 +9,37 @@ module.exports = {
 
   attributes: {
 
-   /*  numeroProducto:{
+    numeroProducto:{
       type: 'string',
       required: true
-    }, */
+    },
     nombre: {
       type: 'string',
       required: true
     },
-    /* descripcion:{
+    descripcion:{
       type:'string',
       required: true
-    }, */
+    },
     precio:{
       type:'number',
     
     },
-   /*  fechaLanzamientoProducto:{
+    fechaLanzamientoProducto:{
       type:'string',
       required: true
     },
     aniosGarantia:{
       type:'string',
       required: true
-    }, */
+    },
+    imagen:{
+      type:'string',
+      required: true
+    },
     tiendaIdFK:{
       model:'Tiendas'
     } 
-    /* numeroProducto: number;
-    nombre: string;
-    descripcion: string;
-    precio: number;
-    fechaLanzamientoProducto: string;
-    aniosGarantia: number;
-    tiendaId: number;
- */
   },
 
 };

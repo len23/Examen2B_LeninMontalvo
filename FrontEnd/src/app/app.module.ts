@@ -16,6 +16,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 import { DetallesTiendaComponent } from './detalles-tienda/detalles-tienda.component';
+import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { DetallesTiendaComponent } from './detalles-tienda/detalles-tienda.compo
     TiendasPadreComponent,
     ProductosHijoComponent,
     EncabezadoComponent,
-    DetallesTiendaComponent
+    DetallesTiendaComponent,
+    DetallesProductoComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

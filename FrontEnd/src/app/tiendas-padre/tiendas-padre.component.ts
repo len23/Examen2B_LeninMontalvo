@@ -13,7 +13,8 @@ export class TiendasPadreComponent implements OnInit {
   tiendas:Tienda[];
   tienda:Tienda={
     nombres:'',
-    direccion:''
+    direccion:'',
+    fechaApertura:''
   };
   contador:number=0;
   constructor(private tiendaService:TiendasService) {

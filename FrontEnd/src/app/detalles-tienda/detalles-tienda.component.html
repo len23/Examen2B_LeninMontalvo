@@ -18,7 +18,7 @@
       <h3 class="my-3">Direccion</h3>
       <p>{{tienda.direccion}}</p>
       <h3 class="my-3">Fecha de Apertura</h3>
-      <p>{{tienda.direccion}}</p>
+      <p>{{tienda.fechaApertura}}</p>
     </div>
 
   </div>
@@ -29,29 +29,12 @@
 
   <div class="row">
 
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+    <div class="col-md-3 col-sm-6 mb-4" *ngFor="let producto of tienda.productos">
+      <a href="/producto/{{producto.id}}">
+        <img class="img-fluid" src="{{producto.imagen}}" alt="">
       </a>
     </div>
 
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
-
-    <div class="col-md-3 col-sm-6 mb-4">
-      <a href="#">
-        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
-      </a>
-    </div>
 
   </div>
   <!-- /.row -->

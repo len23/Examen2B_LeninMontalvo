@@ -17,11 +17,11 @@ module.exports = {
       type:'string',
       required: true
     },
-    /* fechaApertura:{
+    fechaApertura:{
       type:'string',
       required: true
     },
-    RUC:{
+    /*RUC:{
       type:'number',
       required: true
     },
@@ -29,18 +29,15 @@ module.exports = {
       type:'boolean',
       required: true
     }, */
+    imagen:{
+      type:'string',
+      required: true
+    },
      productos:{
       collection: 'Productos',
       via: 'tiendaIdFK'
-    } 
-
-
-
-    /* direccion: string;
-    fechaApertura: string;
-    RUC: number;
-    matriz: boolean;
-    tiendaId: number; */
+    }
+    
   
   },
 
