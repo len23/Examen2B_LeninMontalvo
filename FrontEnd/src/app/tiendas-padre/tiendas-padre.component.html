@@ -1,9 +1,24 @@
-<div class="container" >
+<!-- <div class="container" >
 
   <div class="row"  >
-    <div class="col-lg-4"  *ngFor="let tienda of tiendas" >
-      <h1 style="background-color:#aaa" >{{tienda.nombres}}</h1> 
-      <p style="background-color:#ccc">Direccion: {{tienda.direccion}}</p>
-    </div>
+    <a class="col-lg-4"  *ngFor="let tienda of tiendas" routerLink="/detail/{{tienda.id}}">  
+
+      <h1 >{{tienda.nombres}}</h1> 
+      <p>Direccion: {{tienda.direccion}}</p>
+       </a>
 
 </div> 
+</div> -->
+
+<h3>Tiendas</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let tienda of tiendas" class="col-1-4"
+  routerLink="/detail/{{tienda.id}}">
+    <div class="module hero">
+      <h4>{{tienda.nombres}}</h4>
+    </div>
+  </a>
+</div>
+<div *ngIf="tiendas.length >6">
+  <Button>Cargar Mas</Button>
+</div>  
