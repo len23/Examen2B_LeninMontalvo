@@ -1,46 +1,57 @@
  <!-- Navigation -->
  <div id="padre">
-
 <!-- Page Content -->
 <div class="container">
-
   <!-- Portfolio Item Heading -->
   <h1 class="my-4">{{tienda.nombres}}</h1> 
-
   <!-- Portfolio Item Row -->
   <div class="row">
-
     <div class="col-md-8">
-      <img class="img-fluid" src="https://media.metrolatam.com/2017/06/12/captura-de-pantalla-20170612-a-las-8.11.24-p.m.-1200x600.jpg" alt="">
+      <img class="img-fluid" src="{{tienda.imagen}}" style="width:700px;height:300px;" alt="">
     </div>
-
     <div class="col-md-4">
       <h3 class="my-3">Direccion</h3>
       <p>{{tienda.direccion}}</p>
       <h3 class="my-3">Fecha de Apertura</h3>
       <p>{{tienda.fechaApertura}}</p>
     </div>
-
   </div>
   <!-- /.row -->
-
+  <br/>
+  <br/>
+  <br/>
+  <br/>
   <!-- Related Projects Row -->
-  <h3 class="my-4">Productos</h3>
+  <h1 class="my-4">Productos</h1>
 
   <div class="row">
 
-    <div class="col-md-3 col-sm-6 mb-4" *ngFor="let producto of tienda.productos">
-      <a href="/producto/{{producto.id}}">
-        <img class="img-fluid" src="{{producto.imagen}}" alt="">
+    <!-- <div class="col-md-3 col-sm-6 mb-4" *ngFor="let producto of tienda.productos"> -->
+   <div class="col-md-4" *ngFor="let producto of tienda.productos">
+      <a >
+        <p-card   styleClass="ui-card-shadow"  title="{{producto.nombre}}" subtitle="Precio: {{producto.precio}}$">
+          
+          <p-header>
+        <img class="img-fluid" src="{{producto.imagen}}" style="width:300px;height:150px;" alt="">
+      </p-header>
+     {{producto.descripcion}}
+        <p-footer>
+            <button pButton type="button" label="Ver mas" icon="pi pi-check" style="margin-right: .25em" routerLink="/producto/{{producto.id}}"></button>
+      </p-footer>
+      </p-card>
       </a>
     </div>
-
-
   </div>
   <!-- /.row -->
-
 </div>
+
+
 <!-- /.container -->
+
+
+
+
+
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">

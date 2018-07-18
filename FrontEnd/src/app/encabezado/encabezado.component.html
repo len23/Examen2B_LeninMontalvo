@@ -1,10 +1,19 @@
-<p-menubar [model]="items">
-    
-  <div>
-      <i class="fa fa-cart-plus" aria-hidden="true"  style="font-size:48px;color:blue; margin-right: 30px"></i>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="fa fa-home" aria-hidden="true" style="font-size:48px;color:blue;" routerLink="/Home"></a>
+    <a class="navbar-brand" style="margin-left:10px" routerLink="/Home">Home</a>
+    <div style="margin-left:600px">
+      <a class="navbar-brand" class="fa fa-cart-plus" aria-hidden="true" style="font-size:48px;color:blue; margin-right: 30px"
+        routerLink="/carrito">
+        <!-- <span class="badge" style="background-color: brown">1</span> -->
+        <span class="badge" style="background-color: brown">{{productos.length}}</span>
+      </a>
       <i class="fa fa-user-circle" aria-hidden="true" style="font-size:48px;color:red; margin-right: 30px"></i>
       <span class="label  label-info" style="font-size:15px;color:black; margin-right: 30px">Nombre Usuario</span>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarResponsive" style="margin-right: 20x">
+    </div>
+  </div>
+</nav>
 
-<!--       <button pButton label="Logout" icon="pi pi-check"></button>
- -->  </div>
-</p-menubar>
+

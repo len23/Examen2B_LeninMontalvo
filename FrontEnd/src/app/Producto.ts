@@ -1,10 +1,16 @@
-export class Producto {
+import {Tienda} from './Tienda';
 
-    numeroProducto: number;
+export class Producto {
+    id:number;
+    vendido: boolean;
     nombre: string;
     descripcion: string;
     precio: number;
     fechaLanzamientoProducto: string;
     aniosGarantia: number;
-    tiendaIdFK: number;
+    tiendaIdFK: Tienda;
+   
+    
+   
+    
   }

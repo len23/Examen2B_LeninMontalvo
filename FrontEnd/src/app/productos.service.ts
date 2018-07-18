@@ -1,17 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import {Producto} from './Producto'
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductosService {
   private productosUrl = 'http://localhost:1337/productos';
 
-
   constructor(private http: HttpClient) { }
+
+   //Comunicación entre componentre mediante servicio
+  // Observable string sources
+  private productoConfirmadoFuente = new Subject<Producto>();
+ 
+  // Observable string streams
+  productoConfirmado$ = this.productoConfirmadoFuente.asObservable();
+ 
+ 
+ 
+  confirmProducto(producto: Producto) {
+    this.productoConfirmadoFuente.next(producto);
+  }
 
   getProductos (): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.productosUrl).pipe(
@@ -23,6 +39,16 @@ export class ProductosService {
     const url = `${this.productosUrl}/${id}`;
     return this.http.get<Producto>(url).pipe(
       catchError(this.handleError<Producto>(`getProducto id=${id}`))
+    );
+  }
+
+  updateProducto (producto: Producto): Observable<any> {
+    this.confirmProducto(producto);
+   //producto.tiendaIdFK=producto.tiendaIdFK.id;
+    const url = `${this.productosUrl}/${producto.id}`;
+    return this.http.put(url, producto, httpOptions).pipe(
+      tap(_ => console.log(`updated producto id=${producto.id}`)),
+      catchError(this.handleError<any>('updateProdcuto'))
     );
   }
 
@@ -40,10 +66,14 @@ export class ProductosService {
         console.error(error); // log to console instead
      
         // TODO: better job of transforming error for user consumption
-       /*  this.log(`${operation} failed: ${error.message}`); */
+         console.log(`${operation} failed: ${error.message}`);
      
         // Let the app keep running by returning an empty result.
         return of(result as T);
       };
     }
+
+
+ 
 }
+

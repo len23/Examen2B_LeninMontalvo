@@ -1,17 +1,17 @@
-<h3>Tiendas</h3>
+<h3>Productos</h3>
 <div class="row">
-  <div *ngFor="let tienda of tiendas; let i = index" class="col-1-4">
+  <div *ngFor="let producto of productos; let i = index" class="col-1-4">
     <!-- <div  *ngIf="i < 6"  > -->
         <mat-card class="example-card" style="width:300px;height: 200px;background-color:aquamarine">
           <mat-card-header>
-            <mat-card-title>{{tienda.nombres}}</mat-card-title>
+            <mat-card-title>{{producto.nombre}}</mat-card-title>
            </mat-card-header>
-          <img mat-card-image src="{{tienda.imagen}}" style="width:300px;height:150px;">
+          <img mat-card-image src="{{producto.imagen}}" style="width:300px;height:150px;">
           <mat-card-content style="height:50px">
-            <p>{{tienda.direccion}}</p>
+            <p>{{producto.descripcion}}</p>
           </mat-card-content>
           <mat-card-actions style="width:300px;background-color:aquamarine">
-            <button mat-button routerLink="/detalles/{{tienda.id}}">Ver Mas</button>
+            <button mat-button routerLink="/producto/{{producto.id}}">Ver Mas</button>
           </mat-card-actions>
         </mat-card>
         <br/>
@@ -27,10 +27,3 @@
   </div>
   </div>
  
-<!-- <Button *ngIf="tiendas.length > 6" style="text-align:center; margin-left:160px">Cargar Mas</Button> -->
-<hr style="color:green;
-height:30px"/>
-<app-productos-hijo></app-productos-hijo>
-  
-
-

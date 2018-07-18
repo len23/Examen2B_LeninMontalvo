@@ -10,12 +10,13 @@ import { Producto } from '../Producto';
 })
 export class DetallesProductoComponent implements OnInit {
   @Input() producto: Producto;
+  @Output() anadido = new EventEmitter<boolean>();
   productos:Producto[]=[];
 
 
   constructor(private route: ActivatedRoute,
-    private productoService: ProductosService,
-    private location: Location) { }
+              private productoService: ProductosService,
+              private location: Location) { }
 
   ngOnInit() {  
     this.getProducto();
@@ -27,4 +28,14 @@ export class DetallesProductoComponent implements OnInit {
     this.productoService.getProducto(id)
       .subscribe(producto => this.producto = producto);
   }
+
+  addCarrito(producto:Producto){
+    this.producto=producto;
+    console.log('tiendaIDFK producto', this.producto.tiendaIdFK);
+    this.producto.vendido=true;
+    this.productoService.updateProducto(this.producto)
+    .subscribe(()=>this.location.back());
+
+  }
+ 
 }

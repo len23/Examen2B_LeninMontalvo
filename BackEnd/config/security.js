@@ -27,14 +27,19 @@ module.exports.security = {
   * https://sailsjs.com/docs/concepts/security/cors                          *
   *                                                                          *
   ***************************************************************************/
+ cors: {
+  allRoutes: true,
+  allowOrigins: '*',
+  allowCredentials: false
+},
 
-  // cors: {
-  //   allRoutes: false,
-  //   allowOrigins: '*',
-  //   allowCredentials: false,
-  // },
-
-
+'/productos': {
+  cors: {
+    allRoutes: true,
+    allowOrigins: ['http://localhost:4200'],
+    allowRequestMethods: 'GET,PUT,POST,OPTIONS,HEAD'
+  }
+},
   /****************************************************************************
   *                                                                           *
   * By default, Sails' built-in CSRF protection is disabled to facilitate     *
@@ -49,6 +54,6 @@ module.exports.security = {
   *                                                                           *
   ****************************************************************************/
 
-  // csrf: false
+   csrf: false
 
 };

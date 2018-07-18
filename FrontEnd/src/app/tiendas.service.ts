@@ -27,6 +27,18 @@ export class TiendasService {
     );
   }
 
+  /* GET heroes whose name contains search term */
+searchTiendas(term: string): Observable<Tienda[]> {
+  if (!term.trim()) {
+    // if not search term, return empty hero array.
+    return of([]);
+  }
+  return this.http.get<Tienda[]>(`${this.tiendasUrl}/?nombres=${term}`).pipe(
+    tap(_ => console.log(`found tiendas matching "${term}"`)),
+    catchError(this.handleError<Tienda[]>('searchTiendas', []))
+  );
+}
+
 
     /**
      * Handle Http operation that failed.

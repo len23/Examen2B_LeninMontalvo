@@ -21,7 +21,9 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatCardModule} from '@angular/material/card';
+import {CardModule} from 'primeng/card';
+import { ProductosHijoComponent } from './productos-hijo/productos-hijo.component';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import {MatRadioModule} from '@angular/material/radio';
     EncabezadoComponent,
     DetallesTiendaComponent,
     DetallesProductoComponent,
-    CarritoComponent
+    CarritoComponent,
+    ProductosHijoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCardModule,
+    CardModule
     
     
   ],

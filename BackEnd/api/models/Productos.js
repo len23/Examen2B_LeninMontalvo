@@ -9,8 +9,8 @@ module.exports = {
 
   attributes: {
 
-    numeroProducto:{
-      type: 'string',
+    vendido:{
+      type: 'boolean',
       required: true
     },
     nombre: {

@@ -3,15 +3,15 @@
 <div class="container">
 
   <!-- Portfolio Item Heading -->
-  <h1 class="my-4">Page Heading
-    <small>Secondary Text</small>
+  <h1 class="my-4">{{producto.nombre}}
+    <small> {{producto.precio}}$</small>
   </h1>
 
   <!-- Portfolio Item Row -->
   <div class="row">
 
     <div class="col-md-8">
-      <img class="img-fluid" src="{{producto.imagen}}" alt="">
+      <img class="img-fluid" src="{{producto.imagen}}"  style="width:500px;height:200px; margin-left: 100px" alt="">
     </div>
 
     <div class="col-md-4">
@@ -26,8 +26,9 @@
       </ul>
     </div>
   </div>
- 
-  <Button  class="btn btn-primary"   routerLink="/carrito/{{producto.id}}">Añadir al Carrito</Button>
+ <br/>
+ <br/>
+  <Button  class="btn btn-primary" (click)="addCarrito(producto)">Añadir al Carrito</Button>
 
 </div>
 <!-- /.container -->

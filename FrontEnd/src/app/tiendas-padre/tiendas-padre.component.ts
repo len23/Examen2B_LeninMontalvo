@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Tienda} from '../Tienda';
 import {TiendasService} from '../tiendas.service';
 
-
 @Component({
   selector: 'app-tiendas-padre',
   templateUrl: './tiendas-padre.component.html',
@@ -11,11 +10,7 @@ import {TiendasService} from '../tiendas.service';
 export class TiendasPadreComponent implements OnInit {
   /* tiendas = TIENDAS; */
   tiendas:Tienda[];
-  tienda:Tienda={
-    nombres:'',
-    direccion:'',
-    fechaApertura:''
-  };
+ 
   contador:number=0;
   constructor(private tiendaService:TiendasService) {
    }

@@ -1,6 +1,20 @@
-<div>
+<!-- <div>
 <span class="ui-float-label">
     <input id="float-input" type="text" size="100" pInputText placeholder="Search"> 
    
 </span>
-</div>
+</div> -->
+
+<div id="search-component">
+        <h4 style="text-align: center; margin-bottom: 0;">Busqueda de Tienda</h4> 
+      
+        <input #searchBox id="search-boxt"  type="text" size="100" pInputText placeholder="Search"   (keyup)="search(searchBox.value)" />
+      
+        <ul class="search-result">
+          <li *ngFor="let tienda of tiendas$ | async" >
+            <a  style="text-align: center; margin-bottom: 0;" routerLink="/detalles/{{tienda.id}}">
+              {{tienda.nombres}} 
+            </a>
+          </li>
+        </ul>
+ </div>
