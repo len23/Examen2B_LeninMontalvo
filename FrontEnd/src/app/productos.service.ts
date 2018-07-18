@@ -49,7 +49,7 @@ export class ProductosService {
 
   updateProducto (producto: Producto): Observable<any>{
     this.confirmProducto(producto);
-    producto.tiendaIdFK=producto.tiendaIdFK.id;
+    //producto.tiendaIdFK=tiendaId;
     const url = `${this.productosUrl}/${producto.id}`;
     return this.http.put(url, producto, httpOptions).pipe(
       tap(_ => console.log(`updated producto id=${producto.id}`)),
@@ -60,7 +60,7 @@ export class ProductosService {
 
   updateBorradoProducto (producto: Producto): Observable<any>{
     this.deletedProducto(producto);
-    producto.tiendaIdFK=producto.tiendaIdFK.id;
+   // producto.tiendaIdFK=producto.tiendaIdFK.id;
     const url = `${this.productosUrl}/${producto.id}`;
     return this.http.put(url, producto, httpOptions).pipe(
       tap(_ => console.log(`producto eliminado id=${producto.id}`)),

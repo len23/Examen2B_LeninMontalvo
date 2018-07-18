@@ -10,7 +10,6 @@ import { Producto } from '../Producto';
 })
 export class DetallesProductoComponent implements OnInit {
   @Input() producto: Producto;
-  @Output() anadido = new EventEmitter<boolean>();
   productos:Producto[]=[];
 
 
