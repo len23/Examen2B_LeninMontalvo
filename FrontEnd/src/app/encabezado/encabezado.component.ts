@@ -11,14 +11,23 @@ import { Producto } from '../Producto';
 export class EncabezadoComponent implements OnInit {
   productos=[];
   items: MenuItem[];
+  contador:number=0;
   constructor(private productoService: ProductosService) {
-    productoService.productoConfirmado$.subscribe(
+    productoService.productoConfirmado$.subscribe(      
       producto => {
+        this.contador++;
         console.log(`${producto.nombre} Ha sido agregado`);
       });
+      productoService.productoEliminado$.subscribe(
+        producto => {
+          this.contador--;
+          console.log(`${producto.nombre} Ha sido eliminado`);
+        }
+      );
   }
   ngOnInit() {
     this.getProductos();
+   
     this.items = [
       {
         label: 'HOME',
@@ -31,17 +40,20 @@ export class EncabezadoComponent implements OnInit {
 
   getProductos(): void {
     this.productoService.getProductos()
-        .subscribe(productos =>{
+        .subscribe(
+          productos =>{
           productos.forEach(element => {
             if(element.vendido==true){
               this.productos.push(element);
+              this.contador++;
             }
-          });
-        });
+          },
+        );
+
+        }
+      );
   } 
 
-  onAnadido(agreed: boolean) {
-    this.getProductos();
-  }
+  
 
 }

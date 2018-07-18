@@ -19,14 +19,19 @@ export class ProductosService {
    //Comunicación entre componentre mediante servicio
   // Observable string sources
   private productoConfirmadoFuente = new Subject<Producto>();
+  private productoEliminadoFuente = new Subject<Producto>();
+
  
   // Observable string streams
   productoConfirmado$ = this.productoConfirmadoFuente.asObservable();
- 
- 
- 
+  productoEliminado$ = this.productoEliminadoFuente.asObservable();
+
   confirmProducto(producto: Producto) {
     this.productoConfirmadoFuente.next(producto);
+  }
+
+  deletedProducto(producto: Producto) {
+    this.productoEliminadoFuente.next(producto);
   }
 
   getProductos (): Observable<Producto[]> {
@@ -42,14 +47,26 @@ export class ProductosService {
     );
   }
 
-  updateProducto (producto: Producto): Observable<any> {
+  updateProducto (producto: Producto): Observable<any>{
     this.confirmProducto(producto);
-   //producto.tiendaIdFK=producto.tiendaIdFK.id;
+    producto.tiendaIdFK=producto.tiendaIdFK.id;
     const url = `${this.productosUrl}/${producto.id}`;
     return this.http.put(url, producto, httpOptions).pipe(
       tap(_ => console.log(`updated producto id=${producto.id}`)),
-      catchError(this.handleError<any>('updateProdcuto'))
+      catchError(this.handleError<any>('updateProdcuto'),)
     );
+   
+  }
+
+  updateBorradoProducto (producto: Producto): Observable<any>{
+    this.deletedProducto(producto);
+    producto.tiendaIdFK=producto.tiendaIdFK.id;
+    const url = `${this.productosUrl}/${producto.id}`;
+    return this.http.put(url, producto, httpOptions).pipe(
+      tap(_ => console.log(`producto eliminado id=${producto.id}`)),
+      catchError(this.handleError<any>('updateProdcuto'),)
+    );
+   
   }
 
 

@@ -38,7 +38,7 @@ export class CarritoComponent implements OnInit {
     this.producto=producto;
     console.log('tiendaIDFK producto', this.producto.tiendaIdFK);
     this.producto.vendido=false;
-    this.productoService.updateProducto(this.producto)
+    this.productoService.updateBorradoProducto(this.producto)
     .subscribe(value=>value=this.producto);
   }
  /*  save(): void {
