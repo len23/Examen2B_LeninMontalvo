@@ -3,16 +3,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Observable, of, Subject } from 'rxjs';
 import {Producto} from './Producto'
+import {Producto1} from './Producto1'
+import { Tienda } from './Tienda';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProductosService {
   private productosUrl = 'http://localhost:1337/productos';
+  pr1:Producto1 = new Producto1;
+
 
   constructor(private http: HttpClient) { }
 
@@ -40,6 +45,8 @@ export class ProductosService {
     );  
   }
 
+ 
+
   getProducto(id: number): Observable<Producto> {
     const url = `${this.productosUrl}/${id}`;
     return this.http.get<Producto>(url).pipe(
@@ -47,26 +54,44 @@ export class ProductosService {
     );
   }
 
+
+
+
   updateProducto (producto: Producto): Observable<any>{
     this.confirmProducto(producto);
-    //producto.tiendaIdFK=tiendaId;
-    const url = `${this.productosUrl}/${producto.id}`;
-    return this.http.put(url, producto, httpOptions).pipe(
-      tap(_ => console.log(`updated producto id=${producto.id}`)),
-      catchError(this.handleError<any>('updateProdcuto'),)
+    
+    this.pr1.id=producto.id;
+    this.pr1.vendido= producto.vendido;
+    this.pr1.nombre= producto.nombre;
+    this.pr1.descripcion= producto.descripcion;
+    this.pr1.precio= producto.precio;
+    this.pr1.fechaLanzamientoProducto= producto.fechaLanzamientoProducto;
+    this.pr1.aniosGarantia= producto.aniosGarantia;
+    this.pr1.tiendaIdFK = producto.tiendaIdFK.id;
+    console.log('tienda id pr', this.pr1.tiendaIdFK);
+    const url = `${this.productosUrl}/${this.pr1.id}`;
+    return this.http.put(url, this.pr1 , httpOptions).pipe(
+      tap(_ => console.log(`updated producto id=${this.pr1.id}`)),
+      catchError(this.handleError<any>( 'updateProdcuto'),)
     );
    
   }
 
   updateBorradoProducto (producto: Producto): Observable<any>{
     this.deletedProducto(producto);
-   // producto.tiendaIdFK=producto.tiendaIdFK.id;
-    const url = `${this.productosUrl}/${producto.id}`;
-    return this.http.put(url, producto, httpOptions).pipe(
-      tap(_ => console.log(`producto eliminado id=${producto.id}`)),
+    this.pr1.id=producto.id;
+    this.pr1.vendido= producto.vendido;
+    this.pr1.nombre= producto.nombre;
+    this.pr1.descripcion= producto.descripcion;
+    this.pr1.precio= producto.precio;
+    this.pr1.fechaLanzamientoProducto= producto.fechaLanzamientoProducto;
+    this.pr1.aniosGarantia= producto.aniosGarantia;
+    this.pr1.tiendaIdFK = producto.tiendaIdFK.id;
+    const url = `${this.productosUrl}/${this.pr1.id}`;
+    return this.http.put(url, this.pr1, httpOptions).pipe(
+      tap(_ => console.log(`producto eliminado id=${this.pr1.id}`)),
       catchError(this.handleError<any>('updateProdcuto'),)
     );
-   
   }
 
 

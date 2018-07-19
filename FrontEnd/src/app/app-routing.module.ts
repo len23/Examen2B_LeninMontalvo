@@ -8,11 +8,22 @@ import {EncabezadoComponent} from './encabezado/encabezado.component'
 
 const routes: Routes = [
   { path: 'Home', component: TiendasPadreComponent },
-  { path: 'detalles/:id', component: DetallesTiendaComponent},
-  { path: 'producto/:id', component: DetallesProductoComponent},
-  { path: 'carrito', component: CarritoComponent},
+   { path: 'detalles/:id', component: DetallesTiendaComponent},
+    { path: 'producto/:id', component: DetallesProductoComponent},
+ 
+
+   { path: 'carrito', component: CarritoComponent},
   { path: 'encabezado', component: EncabezadoComponent},
+  
+  /* { path: 'detalles/:id', component: DetallesTiendaComponent,  children: [
+    {
+      path: 'producto/:id',
+      component: DetallesProductoComponent,
+    }
+  ]}, */
+
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
+
 
 
 

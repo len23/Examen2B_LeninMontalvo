@@ -1,6 +1,6 @@
 import {Tienda} from './Tienda';
 
-export class Producto {
+export class Producto1 {
     id:number;
     vendido: boolean;
     nombre: string;
@@ -8,7 +8,7 @@ export class Producto {
     precio: number;
     fechaLanzamientoProducto: string;
     aniosGarantia: number;
-    tiendaIdFK: Tienda;
+    tiendaIdFK: number;
    
     
    
