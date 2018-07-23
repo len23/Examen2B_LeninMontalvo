@@ -36,7 +36,7 @@
       </p-header>
      {{producto.descripcion}}
         <p-footer>
-            <button pButton type="button" label="Ver mas" icon="pi pi-check" style="margin-right: .25em" routerLink="/producto/{{producto.id}}"></button>
+            <button pButton type="button" label="Ver mas" icon="pi pi-check" style="margin-right: .25em" routerLink="producto/{{producto.id}}"></button>
       </p-footer>
       </p-card>
       </a>
@@ -44,7 +44,15 @@
   </div>
   <!-- /.row -->
 </div>
+<br/>
+<br/>
+<br/>
+<hr>
+<br/>
+<br/>
+<br/>
 
+<router-outlet></router-outlet>
 
 <!-- /.container -->
 

@@ -24,6 +24,10 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import {CardModule} from 'primeng/card';
 import { ProductosHijoComponent } from './productos-hijo/productos-hijo.component';
+import { LoginComponent } from './login/login.component';
+import { PrincipalComponent } from './principal/principal.component';
+
+import { FormsModule }   from '@angular/forms';
 
 
 @NgModule({
@@ -35,7 +39,9 @@ import { ProductosHijoComponent } from './productos-hijo/productos-hijo.componen
     DetallesTiendaComponent,
     DetallesProductoComponent,
     CarritoComponent,
-    ProductosHijoComponent
+    ProductosHijoComponent,
+    LoginComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,8 @@ import { ProductosHijoComponent } from './productos-hijo/productos-hijo.componen
     MatInputModule,
     MatRadioModule,
     MatCardModule,
-    CardModule
+    CardModule,
+    FormsModule
     
     
   ],
